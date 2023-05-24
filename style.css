@@ -1,0 +1,195 @@
+* Establecer el color de fondo y el margen para la etiqueta head y header */
+head{
+  background-color: #ffffff;
+  margin: auto;
+}
+
+header{
+  background-color: #ffffff;
+  margin: auto;
+}
+
+/* Establecer la fuente y el color de fondo para el cuerpo del sitio web */
+body {
+  margin-top: 50px;
+  display: block;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: auto;
+}
+
+h2{
+  display: block;
+  margin-top: 20px;
+  margin: 35px;
+  color: rgb(163, 183, 176);
+}
+
+p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+/* Establecer el diseño para la imagen y el texto del encabezado */
+.container-fluid img {
+  display: block;
+  float: left;
+  margin-right: 20px;
+  margin-top: 50px;
+
+}
+
+.container-fluid p {
+  display: block;
+  float: right;
+  margin-right: 20px;
+  margin-block-end: 50px;
+  margin-top: 50px;
+  margin-block-start: 20px;
+}
+
+/* Establecer el margen superior y justificar el texto en la sección principal */
+section{
+  margin-top: 100px;
+  text-align: justify;
+}
+
+/* Establecer el margen y eliminar el borde para las imágenes */
+img{
+
+  margin: auto;
+  border: 0px;
+  padding-top: 5px;
+}
+
+/* Establecer el tamaño máximo y la alineación para los videos */
+video {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Establecer el estilo y la posición para la barra de navegación */
+nav {
+  
+  display: flexbox;
+  background-color: rgb(211, 254, 224);
+  position: center;
+  top: 0;
+  padding-top:  10cm;
+  width: 800px;
+  height: 28px;
+  padding-bottom: 10px;
+  margin: auto;
+  padding-inline-end: 20px;
+}
+
+
+
+/* Establecer el estilo para la lista de navegación */
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin:auto;
+  text-align: center;
+
+}
+
+a img{
+  
+  size: 5px;
+}
+
+
+.address {
+  font-size: 12px;
+  float:left;
+  margin-right: 50px;}
+ 
+
+.telefonos{
+  font-size: 12px;
+  margin-right: 50px;}
+
+  
+.map{
+  float:right ;
+  margin-right: 20px;
+
+  font-size: 12px;
+  margin-top: -225px;}
+
+
+
+.email {
+  display:block;
+
+float: right;
+font-size: 12px;
+margin-right: 600px;}
+
+
+
+.social-links{
+ display:block;
+float:right ;
+font-size: 12px;
+margin-right: 620px;
+padding: 0px;
+margin-top: -245px;}
+
+
+
+
+  
+
+.form{
+  
+  float: left;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+#info{
+  width: 120px;
+  height: 10px;
+  margin: 5px;
+  color: rgb(0, 0, 0);
+  margin-top: 100px;
+
+}
+#email{
+  text-align: center;
+  margin: 10px;
+  width: 120px;
+  height: 20px;
+  background-color: rgb(250, 250, 250);
+  color: rgb(0, 0, 0)
+
+}
+#info{
+  align-items: center;
+  text-align: center;
+  width: 150px;
+  background-color: black;
+  color: rgb(0, 0, 0)
+}
+#enviar{
+  align-items: center;
+  text-align: center;
+  height: 20px;
+  background-color: black;
+  color: white;
+  position: relative;}
+
+  .piedepagina{
+float:left;
+padding-top: 80px;
+    font-size: 10px;
+  }
