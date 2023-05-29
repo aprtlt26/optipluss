@@ -1,6 +1,11 @@
 * Establecer el color de fondo y el margen para la etiqueta head y header */
 /* Establecer el color de fondo y el margen para la etiqueta head y header */
-head, header {
+head {
+  background-color: #ffffff;
+  margin: auto;
+}
+
+header {
   background-color: #ffffff;
   margin: auto;
 }
@@ -130,3 +135,48 @@ nav ul li a {
 
 }
 
+
+
+
+
+.map {
+  float: right;
+  width: 100%;
+  height: 450px;
+  margin-top: -180px;
+  margin: 10px;
+
+
+ }
+
+ @media screen and (max-width: 767px) {
+  header {
+    margin-top: 70px;
+  }
+
+  .container-fluid img {
+    margin-top: 20 }
+
+  
+  }
+
+  a.whatsapp-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+  }
+  
+  a.whatsapp-link i {
+    margin-right: 5px;
+  }
+  
+  @media (max-width: 480px) {
+    a.whatsapp-link {
+      padding: 20px;
+    }
+  }
+  
