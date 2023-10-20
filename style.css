@@ -19,8 +19,8 @@ body {
 }
 
 h2 {
-  margin-top: 10px;
-  margin: 15px;
+  margin-top: 20px;
+  margin: 25px;
   color: rgb(163, 183, 176);
 }
 
@@ -31,7 +31,7 @@ p {
 
 /* Establecer el diseño para la imagen y el texto del encabezado */
 .container-fluid img {
-  display: block;
+  display: flex;
   float: left;
   margin-right: 20px;
   margin-top: 50px;
@@ -43,7 +43,7 @@ p {
   margin-right: 20px;
   margin-block-end: 40px;
   margin-top: 50px;
-  margin-block-start: 20px;
+  margin-block-start: 30px;
 }
 
 /* Establecer el margen superior y justificar el texto en la sección principal */
@@ -101,8 +101,8 @@ nav ul li a {
 #contacto {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  align-items: left;
+  margin-top: 8px;
   text-align: center;
 }
 
@@ -118,13 +118,6 @@ nav ul li a {
 
 }
 
-.telefonos {
-  display: block;
-  float: right;
-  font-size: 12px;
-  margin-top:50px;
-  margin-bottom: 10px;
-}
 
 
 
@@ -140,11 +133,11 @@ nav ul li a {
 
 
 .map {
-  float: right;
+  float: left;
   width: 100%;
   height: 450px;
   margin-top: -180px;
-  margin: 10px;
+  margin: 35px;
 
 
  }
@@ -161,13 +154,14 @@ nav ul li a {
   }
 
   a.whatsapp-link {
-    display: inline-block;
+    display: flexbox;
     padding: 10px 20px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: green;
     color: white;
     text-decoration: none;
+    
   }
   
   a.whatsapp-link i {
@@ -176,7 +170,16 @@ nav ul li a {
   
   @media (max-width: 480px) {
     a.whatsapp-link {
-      padding: 20px;
+      padding: 30px;
     }
   }
   
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #cffbe9f2;
+    padding: 8px;
+    text-align: center;
+    display: none; }
