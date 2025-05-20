@@ -1,284 +1,320 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Optiplus</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="icon" href="logo.png" type="image/x-icon">
-  
+<html lang="es" prefix="og: https://ogp.me/ns#" data-lt-installed="true"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="LOG.webp">
+    
+<title>Optiplus
+</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="">
+<meta property="og:locale" content="es_ES">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Optiplus gardel">
+<meta property="og:url" content="Optiplus gardel">
+<meta property="og:site_name" content="Optiplus gardel">
+<meta property="og:updated_time" content="2024-02-08T17:32:04+00:00">
+<meta property="article:published_time" content="2023-08-24T20:46:06+00:00">
+<meta property="article:modified_time" content="2024-02-08T17:32:04+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Home - ">
+<meta name="twitter:label1" content="Developer">
+<meta name="twitter:data1" content="Alfonso Pretelt">
+<meta name="twitter:label2" content="Tiempo de lectura">
+<meta name="twitter:data2" content="Menos de un minuto">
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
+  <!-- Bootstrap & Font Awesome -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <style>
-    .logo {
-      max-width: 100%;
-      height: auto;
+    /* Global Styles */
+    body {
+      background: linear-gradient(520deg, #fcd5b3, #80e5c5) fixed center/cover no-repeat;
+      color: #303030;
+      min-height: 100vh;
+      padding-top: 10vh;
+      padding-bottom: 10vh;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
     }
-    .col-md-5 {
-      margin: 0 auto;
+
+    /* Quick-button styles */
+    #btn {
+      background: linear-gradient(120deg, #d1d1d1, #649d85);
+      color: #353434;
+      box-shadow: 0 4px 10px rgba(160, 127, 74, 0.913);
+      border-color: #000;
     }
-    .service-list {
-      padding-left: 0;
-      list-style-type: none;
+
+    h2 { color: #353434; }
+
+    /* Navbar */
+    .navbar { background-color: transparent; }
+    .navbar-nav .nav-link { font-weight: 500; margin-right: 1rem; }
+    .navbar-toggler { border: none; }
+
+    /* Hero Section */
+    #hero { position: relative; height: 100vh; overflow: hidden; }
+    #hero video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); z-index: -1; }
+    #hero .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(107, 106, 106, 0.16); display: flex; justify-content: center; align-items: center; color: #575757; text-align: center; padding: 1rem; }
+    #hero .logo { max-width: 400px; margin-bottom: 1rem; }
+
+    /* Sections */
+    section { padding: 2rem 0; }
+    .section-light { background-color: #f8f9fa; color: #0e0e0e; }
+    .section-dark { background-color: #ffffff; color: #0e0e0e; }
+
+    /* Services */
+    .service-list li { margin-bottom: 1rem; font-size: 1.1rem; color: #0e0e0e; }
+
+    /* Gallery */
+    .gallery img { width: 100%; height: auto; border-radius: .5rem; transition: transform .3s; }
+    .gallery img:hover { transform: scale(1.05); }
+
+    /* Contact */
+    #contact .contact-info i { font-size: 1.5rem; margin-right: .5rem; color: #ffffffc7; }
+    #contact .map iframe { border: 0; width: 100%; height: 100%; min-height: 300px; }
+
+    /* Footer */
+    footer { padding: 2rem 0; background-color: #f1f1f1; text-align: center; font-size: .9rem; }
+    footer a { color: #333; text-decoration: none; }
+
+    /* Cookie Banner */
+    #cookie-banner { position: fixed; bottom: 0; width: 100%; background: #fff; padding: 1rem; box-shadow: 0 -2px 5px rgba(0,0,0,0.1); display: none; justify-content: space-between; align-items: center; }
+    #cookie-banner button { background: #ffffffd1; color: #000; border: none; padding: .5rem 1rem; border-radius: .25rem; box-shadow: #a6ffcf; }
+
+    /* Social Icons */
+    .social-icons {
+      position: fixed;
+      top: 50%; left: 16px;
+      transform: translateY(-50%);
+      display: flex !important;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+    }
+    .social-icons a {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: #96efd1;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: background .25s, transform .25s;
+    }
+    .social-icons svg {
+      width: 60%; height: 60%;
+      fill: #fff;
+      transition: fill .25s;
+    }
+    .social-icons a:hover { background: #fff; transform: translateX(4px); }
+    .social-icons a:hover svg { fill: #0a0a0a; }
+
+    /* Ensure icons are visible on small screens */
+    @media (max-width: 767px) {
+      .social-icons { left: 8px; top: auto; bottom: 16px; transform: none; flex-direction: row; }
+      .social-icons a { width: 36px; height: 36px; }
     }
   </style>
 </head>
-
 <body>
 
+
+  <div class="fixed top-[50%] translate-y-[-50%] left-4 hidden lg:flex flex-col gap-2 social-icons">
+    <a href="https://www.facebook.com/Optiplusoficialcolombia " target="_blank" class="w-8 h-8 rounded-full bg-color_text icon mix-blend-difference bg-opacity-100 group hover:bg-white transition duration-300 ease-out p-1 flex items-center justify-center translate-x-[-150%] opacity-0" style=  " background-color: rgb(150, 239, 209);   translate: none; rotate: none; scale: none; opacity: 1; transform: translate(150%, 0%) translate(-48px, 0px);">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512" class="fill-white group-hover:fill-color_text transition duration-300 ease-out"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+    </a>
+    <a 
+    href="https://www.instagram.com/optiplusoficial_colombia/" 
+    target="_blank" 
+    class="w-8 h-8 rounded-full bg-color_text icon mix-blend-difference bg-opacity-100 group hover:bg-white transition duration-300 ease-out p-1 flex items-center justify-center translate-x-[-150%] opacity-0" 
+    style="background-color: rgb(150, 239, 209); transform: translate(150%, 0%) translate(-48px, 0px); opacity: 1;"
+  >
+  <svg xmlns="https://www.instagram.com/optiplusoficial_colombia/" height="1em" viewBox="0 0 448 512" class="fill-white group-hover:fill-color_text transition duration-300 ease-out"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
   
+    <!-- TikTok -->
+<a href="https://www.tiktok.com/@optiplussoptica"
+target="_blank"
+class="w-8 h-8 rounded-full bg-color_text icon mix-blend-difference bg-opacity-100 group hover:bg-white transition duration-300 ease-out p-1 flex items-center justify-center translate-x-[-150%] opacity-0"
+style="background-color: rgb(150, 239, 209); transform: translate(150%, 0) translate(-48px, 0); opacity:1;">
+<svg xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 448 512"
+    class="fill-white group-hover:fill-color_text transition duration-300 ease-out">
+ <path d="M448 209.9c-17.8 0-35.3-1.8-52-5.2v97.2c0 113.7-92.8 206.1-206.9 206.1C76.1 508 0 431.9 0 337.9S76.1 167.8 170.1 167.8c5.8 0 11.5.4 17.1 1V272c-5.6-.7-11.3-1.1-17.1-1.1-41.5 0-75.6 34-75.6 75.6s34 75.6 75.6 75.6 75.6-34 75.6-75.6V0h97.2c0 54.5 44.2 98.8 98.8 98.8v111.1z"/>
+</svg>
+</a>
 
-    <header id="inicio" class="py-5">   </header>
+</div>
+<!-- 2 · ESTILO -->
+<style>
+  /* variables rápidas */
+  :root{
+    --size: 44px;            /* diámetro del botón              */
+    --gap:  10px;            /* separación entre botones        */
+    --bg:   #96efd1;         /* verde menta (puedes cambiar)    */
+    --fg:   #ffffff;         /* color del ícono                 */
+    --hover-bg: #ffffff;     /* fondo al hacer hover            */
+    --hover-fg: #0a0a0a;     /* icono al hacer hover            */
+  }
+  
+  /* contenedor fijo */
+  .social-icons{
+    position:fixed;
+    top:50%; left:16px;                /* 16 px del borde izq. */
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:var(--gap);
+    z-index:9999;                      /* por encima de todo */
+  }
+  
+  /* botón circular */
+  .social-icons a{
+    width:var(--size);
+    height:var(--size);
+    border-radius:50%;
+    background:var(--bg);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:background .25s, transform .25s;
+  }
+  
+  /* icono */
+  .social-icons svg{
+    width:60%; height:60%;
+    fill:var(--fg);
+    transition:fill .25s;
+  }
+  
+  /* efecto hover */
+  .social-icons a:hover{
+    background:var(--hover-bg);
+    transform:translateX(4px);         /* pequeño desplazamiento */
+  }
+  .social-icons a:hover svg{
+    fill:var(--hover-fg);
+  }
+  
+  /* ocultar en móviles chicos si lo deseas */
+  @media(max-width:640px){
+    .social-icons{display:none;}       /* quitar si quieres que se vean en mobile */
+  }
+  </style>
 
-    <div id="video-container">
-      <video id="video-background" autoplay loop muted>
-        <source src="VIDEO.m4v" type="video/mp4">
-      </video>
-   
-      </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-      <img src="logok.jpeg" class="logo mx-auto d-block" alt="Logo">
+      <a class="navbar-brand" href="#"><img src="logo.png" alt="OptiPlus" height="40"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero">
+ 
+    <div class="overlay">
+      <div>
+        <img src="logok.jpeg" class="logo" alt="OptiPlus">
+        <h1 class="display-4">Bienvenidos a OptiPlus</h1>
+        <p class="lead">Cuidado primario de la salud visual con tecnología de punta</p>
+        <a href="#servicios"  id="btn"  class="btn btn-primary btn-lg mt-3">Nuestros Servicios</a>
+      </div>
     </div>
   </header>
 
-  <div class="container"> 
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#servicios">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contáctanos">Contáctanos</a>
-          </li>
-        </ul>
+  <!-- About Section -->
+  
+  <!-- Services Section -->
+  <section id="servicios" class="section-dark text-white">
+    <div class="container">
+      <h2 class="text-center">Servicios que ofrecemos</h2>
+      <ul class="service-list list-unstyled text-center">
+        <li>Examen visual con ética y profesionalismo</li>
+        <li>Examen especializado de fondo de ojo</li>
+        <li>Detección temprana de enfermedades oculares</li>
+        <li>Adaptación de lentes de contacto</li>
+        <li>Suministro de lentes y monturas</li>
+        <li>Jornadas de salud visual a nivel empresarial</li>
+      </ul>
+      <div class="d-flex justify-content-center flex-wrap mt-4">
+        <img src="otp.jpeg" class="img-fluid m-2" alt="Servicio 1" style="max-width:200px;">
+        <img src="exa.jpeg" class="img-fluid m-2" alt="Servicio 2" style="max-width:200px;">
+        <img src="ex.jpeg" class="img-fluid m-2" alt="Servicio 3" style="max-width:200px;">
+        <img src="examenojo.jpeg" class="img-fluid m-2" alt="Servicio 4" style="max-width:200px;">
       </div>
-    </nav>
-
-    <div class="container-fluid">
-      <img src="cr.jpg" class="col-md-5 mx-auto d-block" alt="Imagen">
     </div>
-
-    <section id="sobre-nosotros" class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7 mx-auto">
-            <h2 class="text-center">Sobre Nosotros</h2>
-            <p>Dr. Christian Montoya, Dra. Sofia Hernandez. Somos optometras especializados con más de 15 años de experiencia prestando nuestros servicios enfocados en el cuidado primario de la salud visual. 
-              La prioridad en OPTIPLUSS siempre han sido nuestros pacientes y para ellos el mejor servicio, contamos con equipos de última tecnología que nos permiten ofrecer un examen muy completo y preciso. 
-              Tenemos asesoría de calidad para brindar las mejores opciones en lentes y monturas de manera personalizada a nuestros pacientes.
-              📦 envíos nacionales🇨🇴Domicilios en Medellín </p>
-          </div>
+  </section>
+  <section id="sobre-nosotros" class="section-light">
+    <div class="container">
+      <h2 class="text-center">Sobre Nosotros</h2>
+      <div class="row justify-content-center">
+         <div class="row gallery">
+        <div class="col-sm-6 col-md-4 mb-4"><img src="cr.jpg" alt="Imagen 1"></div>
+        <div class="col-sm-6 col-md-8 mb-9"><img src="VIDEO.gif" alt="Imagen 1"></div>
+        <div class="col-md-8">
+          <p>Dr. Christian Montoya y Dra. Sofia Hernandez somos optometristas especializados con más de 15 años de experiencia. En OptiPlus, nuestro compromiso es brindar atención visual integral y personalizada, apoyados en equipos de última generación para exámenes completos y asesoría en lentes y monturas.</p>
+          <ul>
+            <li>Envíos nacionales 🇨🇴</li>
+            <li>Domicilios en Medellín</li>
+            <li>Atención ética y profesional</li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <section>
-
-    </section>
-
-    <div>
-      
     </div>
+  </section>
 
-    <section>
-      
-    </section>
 
+  <!-- Contact Section -->
+  <section id="contact">
     <div class="container">
-      <section id="servicios" class="py-5">
-        <h2 class="text-center">Servicios que ofertamos</h2>
-        <ul class="service-list">
-
-          <p>Examen visual con ética y profesionalismo.</p>
-          <p>Examen especializado de fondo de ojo.</p>
-
-          <p>Detección temprana de enfermedades oculares.</p>
-
-          <p>Adaptación de lentes de contacto.</p>
-
-          <p>Suministro de Lentes y monturas.</p>
-
-          <p>Jornadas de salud visual a nivel empresarial.</p>
-      
-          <div></div>
-          <section></section>
-       
-          <img src="otp.jpeg" class="col-md-5 mx-auto d-block" alt="Imagen">
-
-          <div>
-
-          </div>
-
-        </ul>
-      </section>
-    </div>
-
-    <div class="container">
-      <div class="d-flex justify-content-center">
-        <img src="exa.jpeg" class="mx-auto d-block" style="width: 350px;">
-        <img src="ex.jpeg" class="mx-auto d-block" style="width: 350px;">
-        <img src="examenojo.jpeg" class="mx-auto d-block" style="width: 350px;">
-      </div>
-    </div>
-
-    <section></section>
-    <div class="container">
-      <p>Nuestro examen especializado se caracteriza por la fidelidad que nos ofrecen las tecnologías que empleamos para lograr la mayor calidad y precisión, con el mayor rigor profesional, y la más completa solución para mejorar tu salud visual.</p>
-    </div>
-
-    <div class="container">
-      <section id="contáctanos" class="py-5">
-        <div class="text-center">
-          <h2>Contáctanos</h2>
-          <p><em>Aquí encontrarás todos los medios para contactarnos.</em></p>
-        </div>
-      </section>
+      <h2 class="text-center">Contáctanos</h2>
 
       <div class="row">
-        <div class="col-md-6">
-          <div class="address">
-            <img src="dir.jpeg" style="height: 40px;" alt="Dirección">
-            <p>Centro Comercial Gardel Plaza.</p>
-            <p>Local 131</p>
-            <p>Dirección: Calle 72 44 - 105 </p>
-            <p>Medellín</p>
-            <p> grupooptipluss@gmail.com</p>
-            <p>+57 3105997940</p>
-
-
-
-            <img src="optiflyr.jpeg" width="600" height="350" style="border:0;" allowfullscreen="  alt="Imagen">
-
-          </div>
+        <div class="col-md-6 mb-4">
+          <p><i class="fas fa-map-marker-alt"></i> Centro Comercial Gardel Plaza, Local 131, Calle 72 44 - 105, Medellín</p>
+          <p><i class="fas fa-envelope"></i> grupooptipluss@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +57 3105997940</p>
+          <p><a class="btn btn-success" href="https://wa.me/+573105997940"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+        
         </div>
+        <div class="col-md-6 mb-4 map">
 
-        <div class="col-md-6">
-          <div class="telefonos">
-            <a href="https://wa.me/3105997940
-            "target="_blank" class="whatsapp-link">
-              <i class="fab fa-whatsapp"></i> WhatsApp
-
-
-            
-              </a>
-              
-            </a>
-          </div>
-
-          <section></section>
-
-          <div class="d-flex justify-content-center">
-
-
-          <div></div>
-
-<section></section>
-       <div></div>
-    <div class="container">
-      <div class="col-md-7">
-        <div class="map">
-          <div id="map"> <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15863.893893711165!2d-75.5548254!3d6.267219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428ea6a754885%3A0x7ae7207b0a0c4eca!2sOptiPlus!5e0!3m2!1ses!2sco!4v1685107339569!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-        
-
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"> 
-          
-          </script>
-          </script>
-
-          
-          <section>  </section>
-
-            <div class="row">
-              <div class="col-md-7">
-                
-            <p> <small>  Desing and Develop by <a href="https://alfonsopretelt.com/">Vitalsphere Studio®</small></a></p>
-         
-        </container>
-        </div> <!-- Cierra el div container-fluid -->
-        <section>
-
-          <div class="pie">
-
-        
-  
-    
-        </section>
-  
-        <section>
-  
-        </section>
-      
-      </div> <!-- Cierra el div col -->
-    
-    </div> <!-- Cierra el div row -->
-    
-  </div> <!-- Cierra el div container -->
-
-  <section>
-    
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15863.893893711165!2d-75.5548254!3d6.267219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428ea6a754885%3A0x7ae7207b0a0c4eca!2sOptiPlus!5e0!3m2!1ses!2sco!4v1685107339569!5m2!1ses!2sco" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section>
+  <!-- Footer -->
 
-  </section>
-  <div id="cookie-banner">
-    <p>Este sitio web utiliza cookies. Al continuar navegando, aceptas el uso de cookies.</p>
-    <button onclick="acceptCookies()">Aceptar</button>
-</div>
 
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script>
     function acceptCookies() {
-        // Establecer una cookie con nombre "cookiesAccepted" y valor "true" que expire en 30 días
-        document.cookie = "cookiesAccepted=true; expires=" + getCookieExpiration(30);
-        
-        // Ocultar el banner de cookies
-        document.getElementById("cookie-banner").style.display = "none";
+      document.cookie = "cookiesAccepted=true; expires=" + new Date(Date.now() + 30*24*60*60*1000).toUTCString() + "; path=/";
+      document.getElementById('cookie-banner').style.display = 'none';
     }
-
-    function getCookieExpiration(days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        return date.toUTCString();
+    window.onload = function() {
+      if (document.cookie.indexOf('cookiesAccepted=true') === -1) {
+        document.getElementById('cookie-banner').style.display = 'flex';
+      }
     }
-
-    function checkCookiesAccepted() {
-        var cookiesAccepted = getCookieValue("cookiesAccepted");
-        if (!cookiesAccepted) {
-            document.getElementById("cookie-banner").style.display = "block";
-        }
-    }
-
-    function getCookieValue(name) {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
-            if (cookie.startsWith(name + "=")) {
-                return cookie.substring(name.length + 1);
-            }
-        }
-        return null;
-    }
-
-    // Comprobar si las cookies han sido aceptadas al cargar la página
-    window.onload = checkCookiesAccepted;
+  </script>
 
   
-</script>
 </body>
 </html>
-          
-          </body>
+
