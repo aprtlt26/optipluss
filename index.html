@@ -1,7 +1,7 @@
 <html lang="es" prefix="og: https://ogp.me/ns#" data-lt-installed="true"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="logok.jpeg">
+    <link rel="icon" type="image/x-icon" href="LOG.webp">
     
 <title>Optiplus
 </title>
@@ -115,16 +115,40 @@
       .social-icons a { width: 36px; height: 36px; }
     }
 
-      @media (max-width: 767px) {
-  body {
-    /* degradado vertical para que se vea completo en pantallas pequeñas */
-    background: linear-gradient(180deg, #80e5c5, #fcd5b3) no-repeat fixed center/cover;
-    /* opcional: aumentar el tamaño del fondo si aún falta cubrir */
-    background-size: 100% 200%;
-  }
-}
 
-  </style>
+
+    /* --- 1 · TITULAR HERO CON GLOW --- */
+    #hero h1 {
+      /* color base */
+      color:#fff;
+      /* doble resplandor menta-naranja */
+      text-shadow:
+        0 0 8px  #96efd1,
+        0 0 16px #96efd1,
+        0 0 24px #ffb87a,
+        0 0 32px #ffb87a;
+    }
+    
+    /* --- 2 · BORDE ILUMINADO DEL LOGO --- */
+    .logo,         /* logo grande del hero */
+    .navbar-brand img {   /* logo de la barra */
+      border:4px solid #fff;            /* línea blanca nítida */
+      border-radius:12px;               /* opcional, si quieres esquinas suaves */
+      box-shadow:
+        0 0 6px  #96efd1,
+        0 0 12px #96efd1,
+        0 0 18px #ffb87a,
+        0 0 24px #ffb87a;
+    }
+    
+    /* --- (opcional) efecto de pulso suave --- */
+    @keyframes glowPulse {
+      0%,100% { text-shadow: 0 0 8px #96efd1, 0 0 16px #96efd1, 0 0 24px #ffb87a, 0 0 32px #ffb87a; }
+      50%     { text-shadow: 0 0 4px #96efd1, 0 0 8px  #96efd1, 0 0 12px #ffb87a, 0 0 18px #ffb87a; }
+    }
+    #hero h1 { animation: glowPulse 3s ease-in-out infinite; }
+    </style>
+    
 </head>
 <body>
 
@@ -210,6 +234,16 @@ style="background-color: rgb(150, 239, 209); transform: translate(150%, 0) trans
   @media(max-width:640px){
     .social-icons{display:none;}       /* quitar si quieres que se vean en mobile */
   }
+
+  @media (max-width: 767px) {
+  body {
+    /* degradado vertical para que se vea completo en pantallas pequeñas */
+    background: linear-gradient(180deg, #80e5c5, #fcd5b3) no-repeat fixed center/cover;
+    /* opcional: aumentar el tamaño del fondo si aún falta cubrir */
+    background-size: 100% 200%;
+  }
+}
+
   </style>
 
   <!-- Navbar -->
@@ -330,4 +364,5 @@ style="background-color: rgb(150, 239, 209); transform: translate(150%, 0) trans
   
 </body>
 </html>
+
 
