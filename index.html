@@ -114,6 +114,16 @@
       .social-icons { left: 8px; top: auto; bottom: 16px; transform: none; flex-direction: row; }
       .social-icons a { width: 36px; height: 36px; }
     }
+
+      @media (max-width: 767px) {
+  body {
+    /* degradado vertical para que se vea completo en pantallas pequeñas */
+    background: linear-gradient(180deg, #80e5c5, #fcd5b3) no-repeat fixed center/cover;
+    /* opcional: aumentar el tamaño del fondo si aún falta cubrir */
+    background-size: 100% 200%;
+  }
+}
+
   </style>
 </head>
 <body>
